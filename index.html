@@ -67,26 +67,35 @@
     <script>
       let topbuttons = document.querySelectorAll(".topbutton");
       let bottombuttons = document.querySelectorAll(".bottombutton");
-      let topclicked = "";
-      let bottomclicked = "";
+      let currentphone = "";
+      let futurephone = "";
+    //   highlighting the top button clicked
       for (let i = 0; i < topbuttons.length; i++) {
         topbuttons[i].addEventListener("click", function () {
           for (let j = 0; j < topbuttons.length; j++) {
             topbuttons[j].style.backgroundColor = "white";
           } 
           topbuttons[i].style.backgroundColor = "aquamarine";
-          topclicked =topbuttons[i].innerText
-          console.log(topclicked)
+          currentphone =topbuttons[i].innerText
+          console.log(currentphone)
         });
       }
+    //   highlighting the bottom buttons clicked
       for (let i = 0; i < bottombuttons.length; i++) {
         bottombuttons[i].addEventListener("click", function () {
           for (let j = 0; j < bottombuttons.length; j++) {
             bottombuttons[j].style.backgroundColor = "white";
           } 
           bottombuttons[i].style.backgroundColor = "aquamarine";
-          bottomclicked =bottombuttons[i].innerText
-          console.log(bottomclicked + " bottom")
+          futurephone =bottombuttons[i].innerText
+          console.log(futurephone + " bottom")
+        //   if current phone is selected and future phone is clicked, navigate to a new page
+        if (currentphone != "") {
+            // saving the user selections on local storage
+            localStorage.setItem("currentphone", currentphone);
+            localStorage.setItem("futurephone", futurephone);
+            window.location = "instructions.html"
+        }
         });
       }
     </script>

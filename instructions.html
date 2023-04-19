@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructions</title>
+    <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+    <h1>hello</h1>
+    <p class="currentphone">
+    </p>
+    <p class="futurephone">
+
+    </p>
+    <script>
+        let currentphone = localStorage.getItem("currentphone")
+        document.querySelector(".currentphone").innerText = "current phone is " + currentphone
+        let futurephone = localStorage.getItem("futurephone")
+        document.querySelector(".futurephone").innerText = "future phone is " + futurephone
+    </script>
+</body>
+</html>
