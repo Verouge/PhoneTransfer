@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone transfer</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- top half -->
+      <div>
+        <!-- Current phone -->
+        <div>
+          <h2>Current Phone</h2>
+        </div>
+        <!-- Buttons -->
+        <div>
+          <button type="button" class="button-17 topbutton">
+            Apple
+            <img src="Assets\apple.png" class="buttonimg" />
+          </button>
+          <button type="button" class="button-17 topbutton">
+            Samsung
+            <img src="Assets\samsung.png" class="buttonimg" />
+          </button>
+          <button type="button" class="button-17 topbutton">
+            Other
+            <img src="Assets\android.png" class="buttonimg" />
+          </button>
+        </div>
+      </div>
+      <!-- bottom half -->
+      <div class="bottom">
+        <!-- future phone -->
+        <div>
+          <h2>Future Phone</h2>
+        </div>
+        <!-- Buttons -->
+        <div>
+          <button
+            type="button"
+            class="button-17 bottombutton"
+          >
+            Apple
+            <img src="Assets\apple.png" class="buttonimg" />
+          </button>
+          <button
+            type="button"
+            class="button-17 bottombutton"
+          >
+            Samsung
+            <img src="Assets\samsung.png" class="buttonimg" />
+          </button>
+          <button
+            type="button"
+            class="button-17 bottombutton"
+          >
+            Other
+            <img src="Assets\android.png" class="buttonimg" />
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      let topbuttons = document.querySelectorAll(".topbutton");
+      let bottombuttons = document.querySelectorAll(".bottombutton");
+      let topclicked = "";
+      let bottomclicked = "";
+      for (let i = 0; i < topbuttons.length; i++) {
+        topbuttons[i].addEventListener("click", function () {
+          for (let j = 0; j < topbuttons.length; j++) {
+            topbuttons[j].style.backgroundColor = "white";
+          } 
+          topbuttons[i].style.backgroundColor = "aquamarine";
+          topclicked =topbuttons[i].innerText
+          console.log(topclicked)
+        });
+      }
+      for (let i = 0; i < bottombuttons.length; i++) {
+        bottombuttons[i].addEventListener("click", function () {
+          for (let j = 0; j < bottombuttons.length; j++) {
+            bottombuttons[j].style.backgroundColor = "white";
+          } 
+          bottombuttons[i].style.backgroundColor = "aquamarine";
+          bottomclicked =bottombuttons[i].innerText
+          console.log(bottomclicked + " bottom")
+        });
+      }
+    </script>
+  </body> 
+</html>
